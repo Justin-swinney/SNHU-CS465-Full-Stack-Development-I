@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+            {{> header}}
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div id="news" class="body">
+							<div class="sidebar">
+								{{#each newsData.sidebar}}
+								<h3>{{this.name}}</h3>
+								{{{this.description}}}
+								{{/each}}
+							</div>
+							<div>
+								{{#each newsData.bodyData}}
+								<h1>{{this.name}}</h1>
+								<img src="images/{{this.image}}" alt="Img">
+								<h2>{{this.title}}</h2>
+								<span class="time">{{this.time}}<br> by: {{this.author}}</span>
+								{{{this.description}}}
+								{{/each}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        {{> footer}}
+	</div>
+</body>
+</html>

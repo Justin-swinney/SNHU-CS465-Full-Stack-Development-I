@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+            {{> header}}
+			<div id="contents">
+				<div id="adbox">
+					{{#each mainPageData.adBox}}
+					<img src="images/{{this.image}}" alt="Img">
+					<h1>{{this.title}}</h1>
+					{{{this.description}}}
+					{{/each}}
+				</div>
+				<div id="main">
+					<div class="box">
+						{{#each mainPageData.mainBox}}
+						<div>
+							<div>
+								<h3>{{this.name}}</h3>
+								<ul>
+									<li>
+										<h4>{{{this.title}}}</h4>
+										<span>{{this.date}}</span>
+										{{{this.description}}}
+									</li>
+								</ul>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+					<div id="testimonials" class="box">
+						{{#each mainPageData.testimonials}}
+						<div>
+							<div>
+								<h3>{{this.name}}</h3>
+								{{{this.description}}}
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+				<div id="sidebar">
+					{{#each mainPageData.sidebar}}
+					<div class="section">
+						<a href='{{this.link}}'><img src="images/{{this.image}}" alt="{{this.alt}}"></a>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+        {{> footer}}
+	</div>
+</body>
+</html>

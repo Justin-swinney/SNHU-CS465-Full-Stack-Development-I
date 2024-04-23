@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{> header}}
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div id="contact" class="body">
+							<h1>Contact</h1>
+							<form action='/contact' method="post">
+								<table>
+									<tbody>
+										{{#each contactData.contactForm}}
+										<tr>
+											<td>{{this.title}}</td>
+											<td>{{{this.inputType}}}</td>
+										</tr>
+										{{/each}}
+										<tr>
+											<td class="txtarea">Message:</td>
+											<td><textarea></textarea></td>
+										</tr> <tr>
+											<td></td>
+											<td><input type="submit" value="" class="btn"></td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+							<h2>Travlr Getaways</h2>
+							{{#each contactData.contactInfo}}
+							<p>
+								<span>{{this.title}}</span> {{this.info}}
+							</p>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> footer}}
+	</div>
+</body>
+</html>
